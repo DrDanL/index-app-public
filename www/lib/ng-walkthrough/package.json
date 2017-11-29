@@ -1,0 +1,116 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ng-walkthrough",
+        "scope": null,
+        "escapedName": "ng-walkthrough",
+        "name": "ng-walkthrough",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/Dan/Documents/dev-project/index-app"
+    ]
+  ],
+  "_from": "ng-walkthrough@latest",
+  "_id": "ng-walkthrough@1.0.2",
+  "_inCache": true,
+  "_location": "/ng-walkthrough",
+  "_nodeVersion": "4.4.3",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/ng-walkthrough-1.0.2.tgz_1474479205415_0.09700582036748528"
+  },
+  "_npmUser": {
+    "name": "ophirs",
+    "email": "souly01@gmail.com"
+  },
+  "_npmVersion": "3.8.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ng-walkthrough",
+    "scope": null,
+    "escapedName": "ng-walkthrough",
+    "name": "ng-walkthrough",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-walkthrough/-/ng-walkthrough-1.0.2.tgz",
+  "_shasum": "62adc069c129d320ebcca2108cf7b1b7084cb465",
+  "_shrinkwrap": null,
+  "_spec": "ng-walkthrough",
+  "_where": "/Users/Dan/Documents/dev-project/index-app",
+  "author": {
+    "name": "Ophir Stern"
+  },
+  "authors": [
+    "Ophir Stern <souly01@gmail.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/souly1/ng-walkthrough/issues"
+  },
+  "dependencies": {},
+  "description": "One of the most common design challenges emerging in mobile design is that of 'invitation' - creating an explanation walk through during user first interaction with the app so to engage the customer. Following Theresa Neil's design pattern from Mobile Des",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "~0.12.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-cli": "~0.0.4",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.2.0",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-phantomjs-launcher": "~0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dist": {
+    "shasum": "62adc069c129d320ebcca2108cf7b1b7084cb465",
+    "tarball": "https://registry.npmjs.org/ng-walkthrough/-/ng-walkthrough-1.0.2.tgz"
+  },
+  "gitHead": "1492c9a1ce59849fd99eb9ed00a15e03a08a34fa",
+  "homepage": "https://github.com/souly1/ng-walkthrough",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "screenshots",
+    "icons",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "angularjs",
+    "directive",
+    "walkthrough",
+    "onboarding",
+    "walk-through",
+    "on-boarding",
+    "tour guide"
+  ],
+  "license": "MIT",
+  "main": "karma.conf.js",
+  "maintainers": [
+    {
+      "name": "ophirs",
+      "email": "souly01@gmail.com"
+    }
+  ],
+  "name": "ng-walkthrough",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/souly1/ng-walkthrough.git"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "version": "1.0.2"
+}

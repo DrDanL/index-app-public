@@ -1,0 +1,35 @@
+<ion-view id="consent" title="{{ 'INFORMED_CONSENT' | translate }}">
+    <ion-content scroll="true">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.account">{{ 'BACK_ACCOUNT' | translate }}
+        </a>
+
+        <div class="item item-text-wrap">
+            {{ 'ACCOUNT_CONSENT_INTRO1' | translate }} {{vm.userJoinDate | date:'dd MMMM yyyy'}}{{ 'ACCOUNT_CONSENT_INTRO2' | translate }}
+        </div>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_1' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_2' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_3' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_4' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="vm.userPermissions.gps_consent" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_5' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_6' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_7' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_8' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_9' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_10' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_11' | translate }}</ion-toggle>
+
+        <ion-toggle ng-checked="true" ng-disabled="true" toggle-class="toggle-calm" class="item-text-wrap">{{ 'CONSENT_12' | translate }}</ion-toggle>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,89 @@
+<ion-view id="dashboard" title="{{ 'DASHBOARD' | translate }}">
+  <!-- If user is new, generate walkthrough-->
+  <walkthrough wid="stage1" walkthrough-type="transparency" is-active="vm.showWalkthrough" has-backdrop="false" on-walkthrough-hide="vm.hideWalk()">
+    <img src="img/walkthrough/dashboard-stage1.png" style="height: 100vh; width: 100%;">
+  </walkthrough>
+
+  <ion-content scroll="true">
+    <div id="status-buttons" class="text-center">
+      </br>
+      <span><h1>{{vm.daysUsing}}</h1> </br> <p>{{ 'USING_APP' | translate }}</p></span>
+      <h2 class="sub-heading-h2">Welcome back {{vm.userData.preferred_name}}!</h2>
+    </div>
+
+    <div ng-if="vm.userActiveGoals.length > 0">
+      </br>
+      <h2 class="sub-heading-h2">{{'YOUR_ACTIVE_GOALS' | translate}}</h2>
+      <div class="list dash-buttons" ng-repeat="goal in vm.userActiveGoals">
+        <a class="item item-avatar dash-buttons" ui-sref="tabs.goals">
+                    <img src="img/goal_target.svg">
+                    <h2>{{goal.advice2}}{{goal.goal_target}}{{goal.advice3}}</h2>
+                    <p>{{'YOUR_ARE_CURRENTLY' | translate}} {{goal.progress}} {{goal.option_name_lower}}</p>
+                </a>
+      </div>
+      </br>
+    </div>
+
+    <h2 class="sub-heading-h2">{{'YOUR_PROGRESS_SO_FAR' | translate}}</h2>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/water-drop.svg"></div>
+      <div class="col value">{{vm.total_units}}</div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'UNITS_CONSUMED' | translate }}</span> </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/wine-bottle.svg"></div>
+      <div class="col value">{{vm.total_drinks}}</div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'DRINKS_CONSUMED' | translate }}</span>
+        </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/balance.svg"></div>
+      <div class="col value">{{vm.total_calories}}</div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'ALCOHOL_CALORIES' | translate }}</span>
+        </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/running.svg"></div>
+      <div class="col value">{{vm.total_exercise}}</br><span class="sub-headline">{{ 'MINUTES' | translate }}</span></div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'EQ_RUNNING' | translate }}</span>
+        </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/hamburger.svg"></div>
+      <div class="col value">{{vm.total_burgers }}</div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'EQ_BURGERS' | translate }}</span>
+        </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"><img src="img/dashboard/pound-sterling.svg"></div>
+      <div class="col value">£{{vm.total_cost}}</div>
+      <div class="col col-50">
+        <span class="headline-text">{{ 'EST_COSTS' | translate }}</span>
+        </br> <span class="sub-headline" ng-show="vm.weekly_view">{{ 'THIS_TIME_LAST_WEEK' | translate }}</span>
+        <span class="sub-headline" ng-show="vm.world_view">{{ 'STARTED_APP' | translate }}</span>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view id="account" title="{{ 'ACCOUNT' | translate }}">
+
+  <ion-content scroll="true">
+
+    <!-- Your Account -->
+    <a class="item item-avatar" ui-sref="tabs.accountDisplay">
+  <img src="img/placeholder_image.png">
+   <h2>{{vm.userData.firstname}} {{vm.userData.surname}}</h2>
+   <p>Joined on {{vm.userData.createdAt | date:'dd MMMM yyyy'}}</p>
+   <div class="item-icon-right">
+       <i class="icon ion-ios-arrow-right"></i>
+   </div>
+ </a>
+    <!-- Consent -->
+    <a class="item item-icon-right" ui-sref="tabs.consent">
+   {{'YOUR_INFORMED_CONSENT' | translate}}
+   <i class="icon ion-ios-arrow-right"></i>
+ </a>
+
+    <a class="item item-icon-right" ui-sref="tabs.normative">
+ {{'DRINKS_FEEDBACK' | translate}}
+ <i class="icon ion-ios-arrow-right"></i>
+ </a>
+
+    <!--Disover -->
+    <h2 class="padding">{{'DISCOVER' | translate}}</h2>
+    <!-- Help -->
+    <a class="item item-icon-right" ui-sref="tabs.help">
+{{'HELP_ARTICLES' | translate}}
+<i class="icon ion-ios-arrow-right"></i>
+</a>
+
+    <a class="item item-icon-right" ui-sref="tabs.walkthrough">
+  {{'HELP_TUTORIALS' | translate}}
+  <i class="icon ion-ios-arrow-right"></i>
+</a>
+
+    <!--About the App/Debug list -->
+    <a class="item item-icon-right" ui-sref="tabs.index">
+  {{'ABOUT_INDEX' | translate}}
+  <i class="icon ion-ios-arrow-right"></i>
+</a>
+
+    </br>
+    <!-- Logout -->
+    <button class="button button-full button-positive" ng-click="vm.logout()">
+  {{'LOGOUT' | translate}}
+</button>
+
+  </ion-content>
+</ion-view>

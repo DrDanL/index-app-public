@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Core JS Files -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+  <script src="cordova.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js" integrity="sha256-0YzDSJS0qH+wpvug+Im1cMB9CX919NMtHj0d2VVHPp4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.9.0/angular-translate.min.js" integrity="sha256-C7w+RD3xPpNJWouiOAO5txfYbIgAe+AvAqO25MAcb7o=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-cordova/0.1.27-alpha/ng-cordova.min.js" integrity="sha256-NI1vDM4/NkrhtAuFchaGm7y74odB6to1b7SHaiHqCMY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js" integrity="sha256-w8BXa9KXx+nmhO9N4hupvlLy+cAtqEarnB40DVJx2xA=" crossorigin="anonymous"></script>
+  <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.3/highcharts.js" integrity="sha256-cq98nXY3wbmZ1E1Qk1ZdM6w9qwRGA9YuW3BXP+PtG4s=" crossorigin="anonymous"></script>
+  <script src="lib/ng-walkthrough/ng-walkthrough.js"></script>
+  <!-- /Core JS Files -->
+
+  <!-- CSS --->
+  <link href="lib/ionic-nifty-modal/nifty.modal.css" rel="stylesheet">
+  <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="lib/ng-walkthrough/css/ng-walkthrough.css">
+  <link rel="stylesheet" href="css/ionic.app.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=" crossorigin="anonymous" />
+  <!-- /CSS --->
+
+  <!-- wrap AngularJs -->
+  <script>
+    angular.element(document).ready(function() {
+      if (window.cordova) {
+        console.log("Running in Cordova, will bootstrap AngularJS once 'deviceready' event fires.");
+        document.addEventListener('deviceready', function() {
+          console.log("Index.html: Deviceready event has fired, bootstrapping AngularJS.");
+          angular.bootstrap(document.body, ['starter']);
+        }, false);
+      } else {
+        console.log("Index.html: Running in browser, bootstrapping AngularJS now.");
+        angular.bootstrap(document.body, ['starter']);
+      }
+    });
+  </script>
+  <!-- /wrap AngularJs -->
+
+  <!-- app's js -->
+  <script src="js/app.js"></script>
+
+  <!-- App Services -->
+  <script src="js/services/AuthService.js"></script>
+  <script src="js/services/screenDetect.service.js"></script>
+  <script src="js/services/helperFunc.service.js"></script>
+  <script src="js/services/userDiary.service.js"></script>
+  <script src="js/services/userGoals.service.js"></script>
+  <script src="js/services/GlobalStore.factory.js"></script>
+  <script src="js/services/data/translation.service.js"></script>
+  <script src="js/services/data/drinkList.js"></script>
+  <script src="js/services/data/goalList.js"></script>
+  <script src="js/services/data/barrierList.js"></script>
+  <script src="js/services/data/screenQuestions.js"></script>
+  <script src="js/services/data/helpQuestions.js"></script>
+  <script src="js/services/factory/localStore.factory.js"></script>
+  <script src="js/services/factory/appModalService.factory.js"></script>
+  <script src="js/services/factory/geoLocation.factory.js"></script>
+  <script src="js/services/factory/myModals.factory.js"></script>
+  <script src="js/services/filters/array-reverse.filters.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/outside/register/register.controller.js"></script>
+  <script src="js/tabs/tabs.controller.js"></script>
+  <script src="js/dashboard/dashboard.controller.js"></script>
+  <script src="js/goals/goals.controller.js"></script>
+  <script src="js/drinks/drinks.controller.js"></script>
+  <script src="js/drinks/edit.controller.js"></script>
+  <script src="js/account/account.controller.js"></script>
+  <script src="js/account/about/about.controller.js"></script>
+  <script src="js/account/help/help.controller.js"></script>
+  <script src="js/account/walkthrough/walkthrough.controller.js"></script>
+  <script src="js/account/consent/consent.controller.js"></script>
+  <script src="js/account/accountDisplay/accountDisplay.controller.js"></script>
+  <script src="js/account/editAccount/editAccount.controller.js"></script>
+  <script src="js/support/support.controller.js"></script>
+  <script src="js/addDrinks/addDrinks.controller.js"></script>
+  <script src="js/screening/screening.controller.js"></script>
+  <script src="js/normative/normative.controller.js"></script>
+  <script src="js/goals/setGoals.controller.js"></script>
+
+</head>
+
+<body>
+  <ui-view></ui-view>
+</body>
+
+</html>

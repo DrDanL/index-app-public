@@ -1,0 +1,65 @@
+<ion-view id="drinks-diary" title="{{ 'DRINKS' | translate }}">
+    <!-- If user is new, generate walkthrough-->
+        <walkthrough wid="stage1" walkthrough-type="transparency" is-active="vm.showWalkthrough" has-backdrop="false" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/drinkdiary-stage3.png" style="height: 100vh; width: 100%;">
+         </walkthrough>
+
+    <ion-content scroll="true">
+
+        <ion-slide-box on-slide-changed="vm.setChartDisplay($index)">
+          <ion-slide>
+                  <h2 class="sub-heading-h2">{{ 'ADD_DRINK_HOW_MANY' | translate }}</h2>
+                  <canvas id="bar" class="chart chart-bar padding" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
+                  </canvas>
+          </ion-slide>
+            <ion-slide>
+                    <h2 class="sub-heading-h2">{{ 'HOW_MANY_UNIT' | translate }}</h2>
+                    <canvas id="bar" class="chart chart-bar padding" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
+                    </canvas>
+            </ion-slide>
+            <ion-slide>
+                    <h2 class="sub-heading-h2">{{ 'MANY_TOTAL_CAL' | translate }}</h2>
+                    <canvas id="bar" class="chart chart-bar padding" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
+                    </canvas>
+            </ion-slide>
+            <ion-slide>
+                    <h2 class="sub-heading-h2">{{ 'HOW_MUCH_MONEY' | translate }}</h2>
+                    <canvas id="bar" class="chart chart-bar padding" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
+                    </canvas>
+            </ion-slide>
+        </ion-slide-box>
+
+        <ion-list>
+            <div class="card diary-list" ng-repeat="items in vm.diaryItems | reverse">
+                <div class="item item-divider">
+                    {{ items.date | date:'fullDate'}}
+                </div>
+                <ion-item>
+
+                    <div class="item item-text-wrap">
+                        <div ng-show="items.drink_free_status" class="row diary-free-day">
+                            <div class="col"><i class="fa fa-check-circle fa-2x green-tick" aria-hidden="true"></i></div>
+                            <div class="col col-75">
+                                <h2>{{'ADD_DRINKS_ALCOHOL_FREE' | translate}}</h2>
+                            </div>
+                        </div>
+                        <div ng-show="!items.drink_free_status" class="diary-data">
+                            <div class="row">
+                                <div class="col-50">{{'CAL_DRUNK' | translate}}: {{items.drink_calories_total}}</div>
+                                <div class="col-50">{{'LIKE_COST' | translate}}: £{{items.drink_price_total}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-50">{{'TOTAL_DRINKS' | translate}}: {{items.drink_qty}}</div>
+                                <div class="col-50">{{'UNITS' | translate}}: {{items.drink_units_total}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <ion-option-button ng-show="!items.drink_free_status" class="button-positive" ng-click="vm.editDrinks(items.date)">
+                        {{'EDIT' | translate}}
+                    </ion-option-button>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

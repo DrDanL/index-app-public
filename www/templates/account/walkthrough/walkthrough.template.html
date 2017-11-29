@@ -1,0 +1,53 @@
+<ion-view id="walkthrough" title="{{ 'HELP_TUTORIALS' | translate }}">
+    <ion-content scroll="true">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.account">{{ 'BACK_ACCOUNT' | translate }}</a>
+
+        <walkthrough walkthrough-type="transparency" is-active="vm.showWalkthroughDash" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/dashboard-stage1.png" style="height: 100vh; width: 100%;">
+        </walkthrough>
+
+        <walkthrough walkthrough-type="transparency" is-active="vm.showWalkthroughGoals" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/goals_stage4.png" style="height: 100vh; width: 100%;">
+        </walkthrough>
+
+        <walkthrough walkthrough-type="transparency" is-active="vm.showWalkthroughAddDrinks" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/add-drinks-stage2.png" style="height: 100vh; width: 100%;">
+        </walkthrough>
+
+        <walkthrough walkthrough-type="transparency" is-active="vm.showWalkthroughDiary" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/drinkdiary-stage3.png" style="height: 100vh; width: 100%;">
+        </walkthrough>
+
+        <walkthrough walkthrough-type="transparency" is-active="vm.showSetGoal" on-walkthrough-hide="vm.hideWalk()">
+            <img src="img/walkthrough/add_goal_stage5.png" style="height: 100vh; width: 100%;">
+        </walkthrough>
+
+        <div class="list">
+            <a class="item" ng-click="vm.dashboardWalk()">
+                <h2>Dashboard</h2>
+                <p>Tutorial on how to use the dashboard</p>
+            </a>
+
+            <a class="item" ng-click="vm.goalsWalk()">
+                <h2>Understanding your Goals</h2>
+                <p>Tutorial on how to use the goals</p>
+            </a>
+
+            <a class="item" ng-click="vm.setGoals()">
+                <h2>Setting a Goal</h2>
+                <p>Tutorial on to set a goal</p>
+            </a>
+
+            <a class="item" ng-click="vm.addDrinks()">
+                <h2>Adding a Drink</h2>
+                <p>Tutorial on how to add a drink</p>
+            </a>
+
+            <a class="item" ng-click="vm.diary()">
+                <h2>Understanding your Diary</h2>
+                <p>Tutorial on how to use the drinks diary</p>
+            </a>
+        </div>
+
+    </ion-content>
+</ion-view>

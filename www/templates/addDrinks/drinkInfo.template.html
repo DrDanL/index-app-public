@@ -1,0 +1,62 @@
+<div class="item">
+  <b>{{vm.drink_title}}</b>
+</div>
+
+<div class="item item-input wrapper2">
+  {{ 'QUANTITY' | translate }}
+  <div class="drink_qty_wrapper">
+    <div class="drink-minus">
+      <button class="button-clear" ng-click="vm.qtyDecrement()" ng-disabled="vm.qty<=1"><i class="ion-minus-circled black iconButton"></i></button>
+    </div>
+
+    <div class="drink-input">
+      <input ng-model="vm.qty" class="quntity-input" type='text' name='quantity' />
+    </div>
+
+    <div class="drink-plus">
+      <button class="button-clear" ng-click="vm.qtyIncrement()" ng-disabled="vm.qty==50">
+                    <i class="ion-plus-circled black iconButton"></i>
+                </button>
+    </div>
+  </div>
+</div>
+
+<div class="item">
+  <b>{{ 'ADD_DRINK_OPTIONAL' | translate }}</b>
+</div>
+
+<label class="item item-input">
+        <span class="input-label"></i>Strength</span>
+        <input class="drink_option_input" type="tel" ng-model="vm.abv" ng-change="vm.addPercentSign()" placeholder="0%">
+    </label>
+
+<label class="item item-input">
+        <span class="input-label"></i>{{ 'ADD_DRINK_COST' | translate }}</span>
+        <input class="drink_option_input" type="tel" ng-model="vm.price" ng-change="vm.addPoundSign()" placeholder="£0.00">
+    </label>
+
+<label class="item item-input">
+        <span class="input-label"></i>{{ 'CALORIES_PER_DRINK' | translate }}</span>
+        <input class="drink_option_input" type="tel" ng-change="vm.calFilter()" ng-model="vm.calories" placeholder="0">
+    </label>
+
+<label class="item item-input item-select">
+        <div class="input-label">
+            {{ 'ADD_DRINK_WHO_ARE_YOU_WITH' | translate }}
+        </div>
+
+        <select ng-model="vm.drink_with_selected" class="drink_options_list">
+            <option ng-repeat="option in vm.drink_with.options" ng-value="option">{{option}}</option>
+        </select>
+    </label>
+
+<label class="item item-input item-select">
+        <div class="input-label">
+            {{ 'ADD_DRINK_WHERE_ARE_YOU' | translate }}
+        </div>
+
+        <select ng-model="vm.drink_where_selected" class="drink_options_list">
+            <option ng-repeat="option in vm.drink_where.options" ng-value="option">{{option}}</option>
+        </select>
+    </label>
+</div>

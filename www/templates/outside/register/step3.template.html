@@ -1,0 +1,16 @@
+<h2>{{ 'MOBILE_VER_SMS' | translate }}</h2>
+
+<h3>{{ 'MOBILE_VER_ENTER_BELOW' | translate }} +44 {{registerDataForm.smsmobile}}</h3>
+
+<form name="codeForm" novalidate>
+    <label class="item item-input code-input">
+        <input type="tel" ng-keypress="filterValue($event)" name="code" ng-model="userData.code" ng-minlength="4" required>
+    </label>
+</form>
+
+<!-- Error Reporting -->
+<p ng-show="codeForm.code.$error.minlength">Code not the required length</p>
+
+<button class="button button-full button-positive" ng-click="twoStepAuth()" ng-disabled="codeForm.$invalid">
+    {{ 'MOBILE_VER_VALIDATE' | translate }}
+</button>

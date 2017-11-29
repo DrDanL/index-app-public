@@ -1,0 +1,43 @@
+<ion-view id="accountDisplay" title="{{ 'ACCOUNT_DISPLAY' | translate }}">
+
+  <ion-content scroll="true">
+    <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.account">{{ 'BACK_ACCOUNT' | translate }}</a>
+
+    <!-- Your Account -->
+    <div class="item item-avatar accountDisplay">
+      <img src="img/placeholder_image.png">
+      <h2>{{vm.userData.firstname}} {{vm.userData.surname}}</h2>
+      <p>0{{vm.userData.smsmobile}}</p>
+      <p>{{vm.userData.email}}</p>
+    </div>
+
+    </br>
+    </br>
+    <a class="item item-icon-right" ui-sref="tabs.editAccount">
+           {{ 'EDIT_YOUR_ACCOUNT' | translate }}
+           <i class="icon ion-ios-arrow-right"></i>
+         </a>
+
+    <div ng-show="vm.userData.permission_awards">
+      <h2>{{ 'BADGES' | translate }}</h2>
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#">
+                    <img src="">
+                    <h2>Drink Logger</h2>
+                    <p>text_details</p>
+                    <div class="item-icon-right">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </div>
+                </a>
+        <a class="item item-thumbnail-left" href="#">
+                    <img src="">
+                    <h2>Target setter</h2>
+                    <p>text_details</p>
+                    <div class="item-icon-right">
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </div>
+                </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

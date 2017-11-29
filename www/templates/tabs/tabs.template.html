@@ -1,0 +1,41 @@
+<!-- Header Content -->
+<ion-header-bar id="tabsHeader" align-title="center" class="bar-positive">
+  <div class="buttons">
+    <button class="button button-icon fa fa-yelp fa-1x" ui-sref="tabs.support">
+  </div>
+    <h1 class="title" data-ng-bind="page.title"></h1>
+</ion-header-bar>
+<!-- /End header content -->
+
+<!-- Tabs -->
+<ion-tabs tabbarPlacement="top" class="withNavbar tabs-icon-top">
+  <!-- Dashboard -->
+  <ion-tab title="{{'DASHBOARD' | translate}}" icon="ion-home" ui-sref="tabs.dashboard">
+    <ion-nav-view name="dashboard-tab"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Goals -->
+  <ion-tab title="{{'GOALS' | translate}}" icon-on="ion-ios-color-filter" icon-off="ion-ios-color-filter-outline" ui-sref="tabs.goals">
+    <ion-nav-view name="goals-tab"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Add Drink -->
+  <ion-tab title="{{'ADD_DRINK' | translate}}" icon-on="ion-plus-circled" icon-off="ion-plus" ng-click="vmTab.addDrink()">
+  </ion-tab>
+
+  <!-- Drinks -->
+  <ion-tab title="{{'DRINKS' | translate}}"  icon-on="ion-ios-pint" icon-off="ion-ios-pint-outline" ui-sref="tabs.drinks">
+    <ion-nav-view name="drinks-tab"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account -->
+  <ion-tab title="{{'ACCOUNT' | translate}}"  icon-on="ion-android-contact" icon-off="ion-android-person-add" ui-sref="tabs.account">
+    <ion-nav-view name="account-tab"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Hidden Tabs -->
+  <ion-tab title="{{'SUPPORT' | translate}}" class="tabs tabs-item-hide">
+    <ion-nav-view name="support-tab"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
+<!-- /End Tabs -->

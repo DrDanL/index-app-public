@@ -1,0 +1,21 @@
+<ion-scroll direction="y" overflow-scroll="true">
+
+    <div ng-repeat="data in vm.drinkOptions" ng-style="$index % 2 === 0 ? {'float': 'left', 'display': 'block', 'width': '50%'} : {'float': 'right', 'display': 'block', 'width': '50%'}">
+
+        <div class="col center-drinks" data-tap-disabled="true" ng-click="vm.drinkOptionsConfirm(data.drink_id)">
+
+            <ul name="{{data.drink_measure}}">
+                <li class="drink-mark" ng-show="drinkThisDay(data.drink_id)"><i class="fa fa-check" aria-hidden="true"></i></li>
+
+                <li>
+                    <img class="drinks-placeholder" data-ng-src="img/drinks-icons/{{data.image}}">
+                </li>
+
+                <li class="blue-light-weighted drink-display-shift">{{data.drink_name}} - {{data.drink_measure}} </li>
+
+                <li class="green-weighted drink-display-shift">{{ 'ADD_DRINK_ABV' | translate }} {{data.abv}}%</li>
+            </ul>
+        </div>
+    </div>
+
+</ion-scroll>

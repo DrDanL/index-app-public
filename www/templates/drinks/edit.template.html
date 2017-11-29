@@ -1,0 +1,28 @@
+<ion-view id="drinks-diary-edit" title="{{ 'DRINKS' | translate }}">
+
+    <ion-content scroll="true">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.drinks">{{ 'BACK_DIARY' | translate }}</a>
+
+      <div ng-repeat="items in vm.diaryDayEditItems">
+          <div class="list card">
+              <div class="item item-avatar">
+                  <img class="drinks-placeholder" data-ng-src="img/drinks-icons/{{returnDrinkImage(items.drink_id)}}">
+                <h2>{{returnDrinkName(items.drink_id)}}</h2>
+                <p>{{ 'QUANTITY' | translate }}: {{items.drink_qty}}</p>
+              </div>
+
+              <div class="item item-body">
+                <p>
+                    <ul>
+                      <li ng-click="vm.editDrink($index)" class="subdued">Edit</li>
+                        <li ng-click="vm.removeDrink($index)" class="subdued">Delete</li>
+                    </ul>
+                </p>
+              </div>
+
+          </div>
+
+      </div>
+
+    </ion-content>
+</ion-view>

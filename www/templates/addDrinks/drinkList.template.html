@@ -1,0 +1,59 @@
+<!-- //Note that drinks are been called via there index location and not ID -->
+<!-- General Drinks -->
+<div class="row center-drinks">
+    <div class="col" name="drink-1" ng-click="vm.drinkTrigger([1, 2, 3, 4, 5, 6, 7, 8])" data-tap-disabled="true">
+        <ul name="drink-1">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/beer-glass.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'BEER' | translate }}</li>
+        </ul>
+    </div>
+
+    <div class="col" name="drink-2" ng-click="vm.drinkTrigger([9, 10, 11, 12, 13, 14, 15, 16, 17, 18])" data-tap-disabled="true">
+        <ul name="drink-2">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/wine-glass.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'WINE' | translate }}</li>
+        </ul>
+    </div>
+
+    <div class="col" name="drink-3" ng-click="vm.drinkTrigger([19, 20])" data-tap-disabled="true">
+        <ul name="drink-3">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/cider-glass.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'CIDER' | translate }}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row center-drinks padding">
+    <div class="col" name="drink-4" ng-click="vm.drinkTrigger([37, 38, 39, 40, 41, 42])" data-tap-disabled="true">
+        <ul name="drink-4">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/cocktail.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'COCKTAIL' | translate }}</li>
+        </ul>
+    </div>
+
+    <div class="col" name="drink-5" ng-click="vm.drinkTrigger([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36])" data-tap-disabled="true">
+        <ul name="drink-5">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/shot-glass.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'SPIRITS' | translate }}</li>
+        </ul>
+    </div>
+
+    <div class="col" name="drink-6" ng-click="vm.drinkTrigger([43, 44, 45])" data-tap-disabled="true">
+        <ul name="drink-6">
+            <li>
+                <img class="drinks-placeholder" src="img/drinks-icons/alcopop-bottle.svg">
+            </li>
+            <li class="blue-light-weighted">{{ 'ALCOPOPS' | translate }}</li>
+        </ul>
+    </div>
+</div>

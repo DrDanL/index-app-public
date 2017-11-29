@@ -1,0 +1,131 @@
+<ion-view id="normative">
+    <ion-content scroll="true">
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.account">{{ 'BACK_ACCOUNT' | translate }}</a>
+
+        <div id="norm-table">
+            <div class="feedback" id="user-feedback">
+                <h3>{{vm.user_text_status}}
+                    <span>
+                     <i class="fa fa-play-circle fa-4x green-tick" aria-hidden="true" ng-if="!vm.alertStatus"></i>
+                     <i class="fa fa-pause-circle-o fa-5x soft-color-alert" aria-hidden="true" ng-if="vm.alertStatus"></i>
+                    </span>
+                </h3>
+                </br>
+                </br>
+                </br>
+            </div>
+
+            <h3>How is your drinking compared to those around you?</h3>
+            
+            <div id="beer-container">
+                <div id="beaker">
+                    <div id="beaker-general" ng-style="{height: vm.hgt_general+ 'px'}">
+                    </div>
+
+                    <div id="beaker-user" ng-style="{height: vm.hgt_user+ 'px'}">
+                    </div>
+
+                    <div class="beer-foam">
+                        <div class="foam-1"></div>
+                        <div class="foam-2"></div>
+                        <div class="foam-3"></div>
+                        <div class="foam-4"></div>
+                        <div class="foam-5"></div>
+                        <div class="foam-6"></div>
+                        <div class="foam-7"></div>
+                    </div>
+
+                    <div id="liquid">
+                        <div class="bubble bubble1"></div>
+                        <div class="bubble bubble2"></div>
+                        <div class="bubble bubble3"></div>
+                        <div class="bubble bubble4"></div>
+                        <div class="bubble bubble5"></div>
+                    </div>
+                </div>
+            </div>
+        </br>
+
+        <h4>What does this mean?</h4>
+
+            <h4>The <span id="text_purple">PURPLE</span> line represents the general population and their drinking</h4>
+            <h4>The <span id="text_green">GREEN</span> dashed line represents you and your drinking</h4>
+        </br>
+
+            <h3>Here is how you compare based on gender...</h3>
+            <ul ng-if="vm.userData.gender == 'Male'">
+                <li ng-repeat="i in getNumber(10) track by $index" ng-class="{'gender-color-box': $index < vm.people_count}"><i class="fa fa-male gender" aria-hidden="true"></i></li>
+            </ul>
+
+            <ul ng-if="vm.userData.gender == 'Female'">
+                <li ng-repeat="i in getNumber(10) track by $index" ng-class="{'gender-color-box': $index < vm.people_count}"><i class="fa fa-female gender" aria-hidden="true"></i></li>
+            </ul>
+
+            <p class="info_gender">
+                {{vm.people_count_text}}
+            </p>
+
+            <h3>This is how many calories you drink each week </br></br>Click to find the alcohol slice...</h3>
+
+            <div id="cal-display">Here are your calories each week...</div>
+
+            <p class="info_cal">
+                {{vm.calSumm}}. That is a total of {{vm.burger_num}} McDonald's Big Mac Burgers!
+            </p>
+
+            <ul class="burger_listing">
+                <li ng-repeat="i in getNumber(vm.burger_num) track by $index"><img src="img/burger_icon.png"></li>
+            </ul>
+
+            <h3>Here is how much you are spending on alcohol...</h3>
+            <div class="row">
+                <div class="col"><img src="img/dashboard/pound-sterling.svg"></div>
+                <div class="col col-75">
+                    <p class="headline-text">We estimate that you spend on average £{{vm.weeklyCost}} a week on alcohol</p>
+                </div>
+            </div>
+
+            <h3>What next?</h3>
+            <ul>
+                <li>You can use this information to help you monitor your drinking. You will have good days, and bad. But try to remember the following helpful advice:</br>
+                    </br>
+                </li>
+                <li>You can still enjoy a drink. But try to remember the following advice: </br>
+                    </br>
+                </li>
+
+                <li>
+                    <b>Make a plan.</b>
+                </li>
+                <li>
+                    <b>Set a budget.</b>
+                </li>
+                <li>
+                    <b>Let family/friends know.</b>
+                </li>
+                <li>
+                    <b>Take it a day at a time.</b>
+                </li>
+                <li>
+                    <b>Make it a smaller one.</b>
+                </li>
+                <li>
+                    <b>Have a lower-strength drink.</b>
+                </li>
+                <li>
+                    <b>Stay hydrated.</b>
+                </li>
+                <li>
+                    </br>
+                    </br> Remember</br> <b>Take a break.</b>
+                </li>
+            </ul>
+            </br>
+            </br>
+            <p class="info_cal">
+                {{vm.source_summary}}
+            </p>
+        </div>
+        </br>
+    </ion-content>
+</ion-view>

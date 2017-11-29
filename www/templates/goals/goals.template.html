@@ -1,0 +1,76 @@
+<ion-view id="goals" title="{{ 'GOALS' | translate }}">
+  <walkthrough wid="stage1" walkthrough-type="transparency" is-active="vm.showWalkthrough" has-backdrop="false" on-walkthrough-hide="vm.hideWalk()">
+    <img src="img/walkthrough/goals_stage4.png" style="height: 100vh; width: 100%;">
+  </walkthrough>
+
+  <ion-content scroll="true">
+    <div class="header-goals">
+      <h3>{{'REALISTIC_GOAL' | translate }}
+      <span>
+        <i class="fa fa-pie-chart fa-4x" aria-hidden="true"></i>
+      </span>
+                </h3>
+    </div>
+
+    <div id="goal_wrapper">
+      <div ng-if="vm.daysUsing < 8" class="padding goals-not">
+        <h3>{{ 'GOALS_NOT_YET' | translate }}</h3>
+      </div>
+
+      <div ng-if="vm.daysUsing >= 8">
+        <h3 id="goal_pick_text">{{ 'GOALS_NOW' | translate }}</h3>
+
+        <!-- Goal Setup -->
+        <div ng-repeat="goal in vm.goalListData | limitTo: (1 - vm.goalListData.length)" ng-click="goal.active_goal===true || vm.setGoal(goal.goal_id)">
+          <div class="row">
+            <div class="col icons-set">
+              <i class="fa fa-crosshairs fa-4x crossfaircolour" aria-hidden="true" ng-show="!{{goal.active_goal}}"></i>
+              <i class="fa fa-spinner fa-spin fa-4x spinnergoal" aria-hidden="true" ng-show="{{goal.active_goal}}"></i>
+            </div>
+
+            <div class="col status" ng-show="!{{goal.active_goal}}">{{'SET_GOAL' | translate}}</div>
+            <div class="col status" ng-show="{{goal.active_goal}}">
+              <span class="headline-text">{{goal.progress}}</span>
+              </br>
+              <span class="sub-headline">{{goal.option_name_lower}}</span>
+            </div>
+
+            <div class="col col-50" ng-show="!{{goal.active_goal}}">
+              <span class="headline-text">{{goal.desc}}. </br>This goal lasts for {{goal.day_length}} day(s)</span>
+            </div>
+
+            <div class="col col-50" ng-show="{{goal.active_goal}}">
+              <span class="headline-text">Goal: {{goal.advice2}}{{goal.goal_target}}{{goal.advice3}}  </br>Goal ends: {{goal.end_date | date:'dd/MM/yy'}}</span>
+            </div>
+          </div>
+          <div ng-show="{{goal.active_goal}}" class="barrier_details">
+            <span>IF...</span> {{goal.if}} <span>THEN...</span> {{goal.then}}...
+            <i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.showConfirmRemove(goal.goal_id, goal.end_date)"></i>
+          </div>
+        </div>
+        <!--/ Goal Setup -->
+
+        <h3 id="goal_pick_text">Previous Goals</h3>
+
+        <div ng-repeat="goal in vm.inactiveGoals">
+          <div class="row">
+            <div class="col icons-set">
+              <i class="fa fa-share fa-4x sharecolour" aria-hidden="true" ng-show="!{{goal.goal_met}}"></i>
+              <i class="fa fa-check fa-4x checkgoal" aria-hidden="true" ng-show="{{goal.goal_met}}"></i>
+            </div>
+
+            <div class="col status">
+              <span class="headline-text">{{goal.progress}}</span>
+              </br>
+              <span class="sub-headline">{{goal.option_name_lower}}</span>
+            </div>
+            <div class="col col-50">
+              <span class="headline-text">Goal: {{goal.advice2}}{{goal.goal_target}} {{goal.option_name_lower}}{{goal.advice3}} </br> You finished this goal on {{goal.end_date | date:'dd/MM/yy'}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

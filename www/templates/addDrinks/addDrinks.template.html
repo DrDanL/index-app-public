@@ -1,0 +1,86 @@
+<ion-modal-view id="add-drinks-box" class="ion-nifty-modal">
+
+  <ion-header-bar>
+    <button class="button icon ion-chevron-left button-arrow-white" ng-click="vm.dateDecrement()"></button>
+
+    <div class="h1 title title-center">{{vm.date | date : format : mediumDate}}</div>
+
+    <button class="button icon ion-chevron-right button-arrow-white" ng-click="vm.dateIncrement()" ng-disabled="vm.datePicker==0"></button>
+  </ion-header-bar>
+
+  <ion-content>
+
+    <!-- If user is new, generate walkthrough-->
+    <walkthrough wid="stage1" walkthrough-type="transparency" is-active="vm.showWalkthrough" has-backdrop="false" on-walkthrough-hide="vm.hideWalk()">
+      <img src="img/walkthrough/add-drinks-stage2.png" style="height: 100vh; width: 100%;">
+    </walkthrough>
+
+    <div class="ion-modal-content-custom">
+
+      <!-- No Drinks Day -->
+      <div class="no-drinks item" ng-show="vm.stage_1">
+        <div class="row">
+          <div class="col">
+            <img class="no-drinks-placeholder" src="img/drinks-icons/no-drinking.svg">
+          </div>
+
+          <div class="col col-50">
+            {{'ADD_DRINKS_ALCOHOL_FREE' | translate}}
+          </div>
+
+          <div class="col">
+            <label class="toggle">
+                               <input type="checkbox" ng-model="vm.noDrinkDayValue" ng-click="vm.noDrinkDayTrigger()">
+                               <div class="track">
+                                   <div class="handle"></div>
+                               </div>
+                           </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Drinks Day Well Done Page -->
+      <div class="no-drink-day padding" ng-show="vm.noDrinkDayValue" id="noDrinkTab">
+        <ul>
+          <li>
+            <i class="fa fa-check-circle fa-5x green-tick" aria-hidden="true"></i>
+          </li>
+          <li class="blue-light-weighted-size">{{vm.date | date : format : mediumDate}} {{ 'ADD_DRINK_TODAY_FREE' | translate }}</li>
+          <li class="green-weighted-size">{{ 'ADD_DRINK_KEEP_UP' | translate }}</li>
+        </ul>
+      </div>
+      <!-- /No Drinks Day Well Done Page -->
+
+      <!-- Drinks Display Wrapper -->
+      <div id="drinks_window" ng-show="!vm.noDrinkDayValue">
+
+        <div id="stage_1_display" ng-show="vm.stage_1">
+
+          <!-- General Drink List -->
+          <div class="item no-padding center-text no-border ">
+            {{ 'DRINK_OPTIONS' | translate }}
+          </div>
+          <div id="main-page-cats" ng-include="vm.drinkListTemplateURL"></div>
+          <!-- /General Drink List -->
+        </div>
+
+        <div id="stage_2_display" ng-show="vm.stage_2" on-swipe-left="vm.mainScreen()">
+          <!-- Drink Options -->
+          <div ng-include="vm.drinkOptionTemplateURL"></div>
+          <!-- /Drink Options -->
+        </div>
+
+      </div>
+      <!-- /Drinks Display Wrapper -->
+      <div id="stage_3_display" ng-show="vm.stage_3" on-swipe-left="vm.mainScreen()">
+        <div ng-include="vm.drinkInfoTemplateURL"></div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar class="bar-light" ng-click="vm.recordDrink()" ng-show="vm.stage_3">
+    <div class="h1 title title-center">{{ 'LOG' | translate }}</div>
+  </ion-footer-bar>
+
+</ion-modal-view>

@@ -1,0 +1,37 @@
+<ion-modal-view id="set-goal-box" class="ion-nifty-modal">
+  <!-- Header Content -->
+  <ion-header-bar>
+    <div class="h1 title">{{'GOAL_ENDS' | translate}} {{vm.goalSet.end_date | date:'dd/MM/yy'}} </div>
+  </ion-header-bar>
+  <!-- /End header content -->
+
+  <ion-content>
+    <h1>{{vm.goalData.desc}}: </br></br> Step 1: {{vm.goalData.advice}}</h1>
+    <div class="select_box">
+      <select ng-model="vm.goalSet.goal_target">
+                    <option ng-repeat="i in vm.getLength(vm.goalData.option_length) track by $index" name="{{vm.goalData.goal_id}}" value="{{$index+1}}">{{$index+1}} {{vm.goalData.option_name}}</option>
+                </select>
+    </div>
+    <h2>{{'GOALS_TEXT_BARRIER' | translate}}</h2>
+
+    <h2>Step 2: IF...(the barrier)</h2>
+    <div class="select_box">
+      <select ng-model="vm.barrier_selected_temp" ng-change="vm.onBarrierChange()">
+                <option ng-repeat="i in vm.barriers" name="{{i.barrier_id}}" value="{{$index}}">{{i.question}} </option>
+            </select>
+    </div>
+
+    <h2>Step 3: THEN...(the solution)</h2>
+    <div class="select_box">
+      <select ng-model="vm.goalSet.barrier_option">
+                <option ng-repeat="i in vm.barrier_options.options" name="{{i}}" value="{{$index+1}}">{{i}} </option>
+            </select>
+    </div>
+
+    <h2 class="day_limit">You have <b>{{vm.goalData.day_length}}</b> day(s) to complete this goal</h2>
+
+  </ion-content>
+  <ion-footer-bar class="bar-light" ng-click="vm.submitGoal()">
+    <div class="h1 title title-center">{{'SET_GOAL' | translate }}</div>
+  </ion-footer-bar>
+</ion-modal-view>

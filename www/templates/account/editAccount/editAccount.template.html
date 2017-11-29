@@ -1,0 +1,82 @@
+<ion-view id="modifyAccount" title="{{ 'EDIT_YOUR_ACCOUNT' | translate }}">
+
+  <ion-content scroll="true">
+    <a class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="tabs.account">{{ 'BACK_ACCOUNT' | translate }}</a>
+
+    <br/>
+    </br/>
+
+    <form name="userInputForm" novalidate>
+      <div class="list">
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_FIRST_NAME' | translate }}</span>
+                    <input type="text" name="firstname" placeholder="{{vm.userData.firstname}}" ng-model="vm.userData.firstname" ng-minlength="3" required>
+                </label>
+
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_SURNAME' | translate }}</span>
+                    <input type="text" name="surname" placeholder="{{vm.userData.surname}}" ng-model="vm.userData.surname" ng-minlength="1" required>
+                </label>
+
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_EMAIL' | translate }}</span>
+                    <input type="email" name="email" placeholder="{{vm.userData.email}}" ng-model="vm.userData.email" required>
+                </label>
+
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_PREFFERED_NAME' | translate }}</span>
+                    <input type="text" name="preferred_name" placeholder="{{vm.userData.preferred_name}}" ng-model="vm.userData.preferred_name" ng-minlength="3" ng-maxlength="10" required>
+                </label>
+
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_GENDER' | translate }}</span>
+<input type="text" name="gender" placeholder="{{vm.userData.gender}}" ng-model="vm.userData.gender" ng-minlength="3" ng-disabled="true" required>
+                </label>
+      </div>
+
+      <div class="list">
+        <label class="item item-input">
+                    <span class="input-label">{{ 'REGISTER_MOBILE' | translate }}</span>
+                    <span class="minor-padding">+44</span>
+                    <input type="tel" name="smsnumber" placeholder="{{vm.userData.smsnumber}}" ng-model="vm.userData.smsmobile" required>
+                </label>
+      </div>
+
+      <div class="padding">
+        <!-- First Name -->
+        <p ng-show="userInputForm.firstname.$error.minlength">{{ 'REGISTER_FIRST_NAME_ERROR' | translate }}</p>
+        <p ng-show="userInputForm.firstname.$error.required">* {{ 'REGISTER_FIRST_NAME_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- Surname -->
+        <p ng-show="userInputForm.surname.$error.minlength">{{ 'REGISTER_SURNAME_ERROR' | translate }}</p>
+        <p ng-show="userInputForm.surname.$error.required">* {{ 'REGISTER_SURNAME_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- email -->
+        <p ng-show="userInputForm.email.$error.required">* {{ 'REGISTER_EMAIL_ERROR_REQUIRED' | translate }}</p>
+        <p ng-show="userInputForm.email.$invalid && !myForm.username.$pristine">* {{ 'REGISTER_EMAIL_ERROR_TYPE' | translate }}</p>
+
+        <!-- Nickname -->
+        <p ng-show="userInputForm.preferred_name.$error.required">* {{ 'REGISTER_PREFFERED_NAME_ERROR_REQUIRED' | translate }}</p>
+        <p ng-show="userInputForm.preferred_name.$error.minlength">{{ 'REGISTER_PREFFERED_NAME_ERROR_MIN' | translate }}</p>
+        <p ng-show="userInputForm.preferred_name.$error.maxlength">{{ 'REGISTER_PREFFERED_NAME_ERROR_MAX' | translate }}</p>
+
+        <!-- Gender -->
+        <p ng-show="userInputForm.gender.$error.required">* {{ 'REGISTER_GENDER_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- Mobile -->
+        <p ng-show="userInputForm.smsnumber.$error.minlength">{{ 'REGISTER_MOBILE_MIN' | translate }}</p>
+        <p ng-show="userInputForm.smsnumber.$error.maxlength">{{ 'REGISTER_MOBILE_MAX' | translate }}</p>
+        <p ng-show="userInputForm.smsnumber.$error.required">* {{ 'REGISTER_MOBILE_REQUIRED' | translate }}</p>
+        <p ng-show="userInputForm.smsnumber.$error.number">* {{ 'REGISTER_MOBILE_NUMBER' | translate }}</p>
+
+      </div>
+
+      <button class="button button-block button-positive" ng-click="vm.updateAccount()" ng-disabled="userInputForm.$invalid">
+                {{ 'UPDATE' | translate }}
+            </button>
+    </form>
+    </br>
+
+  </ion-content>
+
+</ion-view>

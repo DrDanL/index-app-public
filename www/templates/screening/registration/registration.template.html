@@ -1,0 +1,68 @@
+<ion-view id="screening" title="{{'SCREENING' | translate}}">
+  <!-- Header Content -->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">{{vm.screeningTitle}}</h1>
+    </ion-header-bar>
+    <!-- /End header content -->
+
+    <ion-content class="padding" scroll="true">
+        <p class="header_text">{{'SCREENING_INFO' | translate}}
+        </p>
+        </br>
+        <p>Your progress...</p>
+        <progress max="100" value="{{vm.questionIncremnt / vm.questionLength * 100 | number:0}}"> </progress>
+
+        <div class="container">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <p class="question">{{ vm.question }}</p>
+                </div>
+                <div ng-show="vm.display_type == 1">
+                    <!-- Input Type Questions-->
+                    <div class="item item-text-wrap">
+                      <p ng-if="vm.num_response > 1 && vm.display_type != 2" class="numResponse">You can select up to <b>{{ vm.num_response }}</b> responses.</p>
+                        <ul>
+                            <li ng-repeat="option in vm.options">
+                                <label ng-click="vm.showNextButton()" ng-hide="vm.questionIncremnt == 11 && dataObject.drink_with_1_{{$index+1}} != 1 || vm.questionIncremnt == 13 && dataObject.drink_location_1_{{$index+1}} != 1">
+                     <input ng-if="vm.num_response == 1" type="radio" name="{{vm.type_id[$index]}}" value="{{vm.valueOptions[$index]}}" ng-model="dataObject[vm.type_id[$index]]" ng-hide="vm.questionIncremnt == 11 && dataObject.drink_with_1_{{$index+1}} != 1 || vm.questionIncremnt == 13 && dataObject.drink_location_1_{{$index+1}} != 1">
+                     <input ng-if="vm.num_response > 1" type="radio" name="{{ vm.type_id }}_{{ $index }}" value="{{vm.valueOptions[$index]}}" ng-model="dataObject[vm.type_id[$index]]"> {{option}}
+                     </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Input questions -->
+                <div class="item item-text-wrap" ng-show="vm.display_type == 3">
+                    <select ng-model="dataObject[vm.type_id]" ng-change="vm.showNextButton()">
+                        <option ng-repeat="option in vm.options" name="{{vm.type_id[$index]}}" value="{{vm.valueOptions[$index]}}">{{option}}</option>
+                    </select>
+                </div>
+                <!-- /Input questions -->
+
+                <!-- Scale Type Questions-->
+                <div ng-show="vm.display_type == 2">
+                    <p id="userRating">Your Score: {{dataObject[vm.type_id[0]]}}</p>
+                    <div class="item range range-energized">
+                        <i class="icon">0</i>
+                        <input ng-change="vm.showNextButton()" value="5" type="range" name="{{vm.type_id[0]}}" min="0" max="10" step="1" ng-model="dataObject[vm.type_id[0]]">
+                        <i class="icon">10</i>
+                    </div>
+                    </br>
+                </div>
+                <!-- /End of Question showing -->
+            </div>
+
+          </br>
+
+            <!-- If we have more questions, lets move next -->
+            <button class="button button-full button-positive" ng-click="vm.nextQuestion()" ng-disabled="vm.nextStep" ng-show="vm.showNext">
+      {{'NEXT_TEXT' | translate}}
+      </button>
+
+            <!-- If we have no more questions, lets save -->
+            <button class="button button-full button-positive" ng-click="vm.saveResponse()" ng-show="vm.screenOver" ng-disabled="vm.nextStep">
+      {{'LOG' | translate}}
+      </button>
+    </ion-content>
+</ion-view>

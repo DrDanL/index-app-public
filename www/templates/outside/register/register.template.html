@@ -1,0 +1,32 @@
+<ion-view id="register" hide-nav-bar="false" title="Join InDEx">
+    <ion-nav-bar>
+        <ion-nav-back-button style="color: black;">Back</ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content padding="true" scroll="true">
+        <div id="status-buttons" class="text-center">
+            <a ui-sref-active="active" ui-sref="outside.register.consent"><span>1</span> {{ 'CONSENT' | translate }}</a>
+
+            <a ui-sref-active="active" ui-sref="outside.register.profile"><span>2</span> {{ 'PROFILE' | translate }}</a>
+
+            <a ui-sref-active="active" ui-sref="outside.register.verify"><span>3</span>{{ 'MOBILE_VER_VALIDATE' | translate }}</a>
+        </div>
+        
+        <!-- our nested state views will be injected here -->
+        <div id="form-views" ui-view>
+            <div class="padding">
+                <h2>Welcome</h2>
+                <p>
+                    <b>InDEx</b> is a project funded by the <b>Medical Research Council</b> to develop an alcohol intervention delivered via a hybrid web and mobile app. Our aim is to help people leaving the UK Armed Forces to reduce their drinking and to understand more about their patterns of drinking.
+                </p>
+                <p>
+                    To enable us to conduct our research we will need you to complete a secure online registration process. This will generate a account that is unique to you.
+                </p>
+            </div>
+
+            <button class="button button-block button-positive" ui-sref="outside.register.consent">
+                  {{ 'START_REGISTER' | translate }}
+              </button>
+        </div>
+    </ion-content>
+</ion-view>

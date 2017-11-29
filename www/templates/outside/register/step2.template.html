@@ -1,0 +1,75 @@
+</br>
+</br>
+<form name="registerForm" novalidate>
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_FIRST_NAME' | translate }}</span>
+            <input type="text" name="firstname" ng-model="userData.firstname" ng-minlength="3" required>
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_SURNAME' | translate }}</span>
+            <input type="text" name="surname" ng-model="userData.surname" ng-minlength="1" required>
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_EMAIL' | translate }}</span>
+            <input type="email" name="email" ng-model="userData.email" required>
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_PREFFERED_NAME' | translate }}</span>
+            <input type="text" name="preferred_name" ng-model="userData.preferred_name" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_GENDER' | translate }}</span>
+            <select required name="gender" ng-model="userData.gender" class="width_input">
+                <option value="{{ 'REGISTER_GENDER_MALE' | translate }}" selected required>{{ 'REGISTER_GENDER_MALE' | translate }}</option>
+                <option value="{{ 'REGISTER_GENDER_FEMALE' | translate }}">{{ 'REGISTER_GENDER_FEMALE' | translate }}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">{{ 'REGISTER_MOBILE' | translate }}</span>
+            <span class="minor-padding">+44</span>
+            <input type="tel" ng-keypress="filterValue($event)" name="smsnumber" ng-model="userData.smsmobile" ng-minlength="10" ng-maxlength="10" pattern="[0-9]*" required>
+        </label>
+    </div>
+
+    <div class="padding">
+        <!-- First Name -->
+        <p ng-show="registerForm.firstname.$error.minlength">{{ 'REGISTER_FIRST_NAME_ERROR' | translate }}</p>
+        <p ng-show="registerForm.firstname.$error.required">* {{ 'REGISTER_FIRST_NAME_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- Surname -->
+        <p ng-show="registerForm.surname.$error.minlength">{{ 'REGISTER_SURNAME_ERROR' | translate }}</p>
+        <p ng-show="registerForm.surname.$error.required">* {{ 'REGISTER_SURNAME_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- email -->
+        <p ng-show="registerForm.email.$error.required">* {{ 'REGISTER_EMAIL_ERROR_REQUIRED' | translate }}</p>
+        <p ng-show="registerForm.email.$invalid && !myForm.username.$pristine">* {{ 'REGISTER_EMAIL_ERROR_TYPE' | translate }}</p>
+
+        <!-- Nickname -->
+        <p ng-show="registerForm.preferred_name.$error.required">* {{ 'REGISTER_PREFFERED_NAME_ERROR_REQUIRED' | translate }}</p>
+        <p ng-show="registerForm.preferred_name.$error.minlength">{{ 'REGISTER_PREFFERED_NAME_ERROR_MIN' | translate }}</p>
+        <p ng-show="registerForm.preferred_name.$error.maxlength">{{ 'REGISTER_PREFFERED_NAME_ERROR_MAX' | translate }}</p>
+
+        <!-- Gender -->
+        <p ng-show="registerForm.gender.$error.required">* {{ 'REGISTER_GENDER_ERROR_REQUIRED' | translate }}</p>
+
+        <!-- Mobile -->
+        <p ng-show="registerForm.smsnumber.$error.minlength">{{ 'REGISTER_MOBILE_MIN' | translate }}</p>
+        <p ng-show="registerForm.smsnumber.$error.maxlength">{{ 'REGISTER_MOBILE_MAX' | translate }}</p>
+        <p ng-show="registerForm.smsnumber.$error.required">* {{ 'REGISTER_MOBILE_REQUIRED' | translate }}</p>
+        <p ng-show="registerForm.smsnumber.$error.number">* {{ 'REGISTER_MOBILE_NUMBER' | translate }}</p>
+
+    </div>
+
+    <button class="button button-block button-positive" ng-click="showConfirmMobile()" ng-disabled="registerForm.$invalid">
+      {{ 'REGISTER' | translate }}
+    </button>
+</form>
+</br>
