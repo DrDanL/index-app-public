@@ -1,4 +1,5 @@
-# InDEx App - Public Release (v1.0.0)
+# InDEx App - Public Release (v1.0.0) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1068121.svg)](https://doi.org/10.5281/zenodo.1068121)
+
 
 InDEx is a software package for reporting and monitoring alcohol consumption via a smartphone application. Consumption of alcohol is self-reported by the user, with the app providing a visual representation of drinking behaviour and consumption levels compared to the general population. The app was developed by [Dr Daniel Leightley](https://www.leightley.com) of the [King's Centre for Military Health Research](https://www.kcl.ac.uk/kcmhr/index.aspx) funded by a [Medical Research Council](https://www.mrc.ac.uk/) Grant led by [Dr Laura Goodwin](https://www.liverpool.ac.uk/psychology-health-and-society/staff/laura-goodwin/) and [Professor Nicola Fear](https://kclpure.kcl.ac.uk/portal/nicola.t.fear.html).
 
