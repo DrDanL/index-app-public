@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.index-app.alcohol" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.index-app.alcohol" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>InDEx</name>
   <description>
         InDex App - An alcohol intervention for those leaving the Armed Forces
     </description>
-  <author email="dleightley@ieee.org" href="https://index-app.org/">
+  <author email="dan.l@outlook.com" href="https://index-app.org/">
       Daniel Leightley
     </author>
   <content src="index.html"/>

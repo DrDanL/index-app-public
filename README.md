@@ -1,5 +1,4 @@
-# InDEx App - Public Release (v1.0.0) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1068121.svg)](https://doi.org/10.5281/zenodo.1068121)
-
+# InDEx App - Public Release (v1.0.0) [![DOI-Software](https://zenodo.org/badge/DOI/10.5281/zenodo.1068121.svg)](https://doi.org/10.5281/zenodo.1068121) | [![DOI-Software Paper](https://zenodo.org/badge/DOI/10.5281/zenodo.1068121.svg)](http://doi.org/10.5334/jors.207)
 
 InDEx is a software package for reporting and monitoring alcohol consumption via a smartphone application. Consumption of alcohol is self-reported by the user, with the app providing a visual representation of drinking behaviour and consumption levels compared to the general population. The app was developed by [Dr Daniel Leightley](https://www.leightley.com) of the [King's Centre for Military Health Research](https://www.kcl.ac.uk/kcmhr/index.aspx) funded by a [Medical Research Council](https://www.mrc.ac.uk/) Grant led by [Dr Laura Goodwin](https://www.liverpool.ac.uk/psychology-health-and-society/staff/laura-goodwin/) and [Professor Nicola Fear](https://kclpure.kcl.ac.uk/portal/nicola.t.fear.html).
 
@@ -26,9 +25,8 @@ The InDEx app has been released under [GNU General Public License (v3)](https://
 You can cite this software using the following reference:
 
 ```
-Leightley, D., Puddephatt, J., Goodwin, L., Roberto, R., Fear, N. T., (2017). InDEx: Open source iOS and Android software for self-reporting and monitoring of alcohol consumption. Journal of Open Research Software X(X), p.X. DOI: X
+Leightley, D., Puddephatt, J., Goodwin, L., Roberto, R., Fear, N. T., (2018). InDEx: Open source iOS and Android software for self-reporting and monitoring of alcohol consumption. Journal of Open Research Software 6(1), p.13. DOI: http://doi.org/10.5334/jors.207
 ```
-NOTE: Manuscript currently under review.
 
 ## Getting Started
 

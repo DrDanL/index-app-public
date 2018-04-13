@@ -1,6 +1,6 @@
 {
   "name": "InDEx-App",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A brief alcohol intervention app",
   "license": "GNU-3.0",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "author": {
     "name": "Daniel Leightley",
-    "email": "dleightley@ieee.org"
+    "email": "dan.l@outlook.com"
   },
   "dependencies": {
     "cordova-uglify": "^0.3.0",
